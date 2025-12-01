@@ -37,7 +37,11 @@ const AdminDashboard = () => {
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/notifications/");
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8000"
+        }/api/notifications/`
+      );
       const data = await res.json();
       setNotifications(data);
     } catch (err) {
@@ -47,7 +51,9 @@ const AdminDashboard = () => {
 
   const fetchStaff = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/staff/");
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/staff/`
+      );
       const data = await res.json();
       setStaff(data);
     } catch (err) {
@@ -57,7 +63,11 @@ const AdminDashboard = () => {
 
   const fetchMaterials = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/materials/");
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8000"
+        }/api/materials/`
+      );
       const data = await res.json();
       setMaterials(data);
     } catch (err) {
@@ -67,7 +77,11 @@ const AdminDashboard = () => {
 
   const fetchExaminations = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/examinations/");
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8000"
+        }/api/examinations/`
+      );
       const data = await res.json();
       setExaminations(data);
     } catch (err) {
@@ -85,7 +99,9 @@ const AdminDashboard = () => {
     if (window.confirm("Are you sure you want to delete this notification?")) {
       try {
         const res = await fetch(
-          `http://localhost:8000/api/notifications/${id}/`,
+          `${
+            import.meta.env.VITE_API_URL || "http://localhost:8000"
+          }/api/notifications/${id}/`,
           {
             method: "DELETE",
             headers: {
@@ -111,12 +127,17 @@ const AdminDashboard = () => {
   const handleDeleteStaff = async (id) => {
     if (window.confirm("Are you sure you want to delete this staff member?")) {
       try {
-        const res = await fetch(`http://localhost:8000/api/staff/${id}/`, {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        });
+        const res = await fetch(
+          `${
+            import.meta.env.VITE_API_URL || "http://localhost:8000"
+          }/api/staff/${id}/`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+            },
+          }
+        );
         if (res.ok) {
           alert("Staff member deleted successfully");
           fetchStaff();
@@ -135,12 +156,17 @@ const AdminDashboard = () => {
   const handleDeleteMaterial = async (id) => {
     if (window.confirm("Are you sure you want to delete this material?")) {
       try {
-        const res = await fetch(`http://localhost:8000/api/materials/${id}/`, {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        });
+        const res = await fetch(
+          `${
+            import.meta.env.VITE_API_URL || "http://localhost:8000"
+          }/api/materials/${id}/`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+            },
+          }
+        );
         if (res.ok) {
           alert("Material deleted successfully");
           fetchMaterials();
@@ -167,7 +193,9 @@ const AdminDashboard = () => {
       editingNotification;
     try {
       const res = await fetch(
-        `http://localhost:8000/api/notifications/${id}/`,
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8000"
+        }/api/notifications/${id}/`,
         {
           method: "PUT",
           headers: authHeaders,
@@ -208,13 +236,18 @@ const AdminDashboard = () => {
     if (email) formData.append("email", email);
     if (phone) formData.append("phone", phone);
     try {
-      const res = await fetch(`http://localhost:8000/api/staff/${id}/`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-        },
-        body: formData,
-      });
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8000"
+        }/api/staff/${id}/`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+          body: formData,
+        }
+      );
       if (res.ok) {
         setEditMessage({ text: "Staff updated", type: "success" });
         setTimeout(() => {
@@ -306,7 +339,9 @@ const AdminDashboard = () => {
                   };
                   try {
                     const res = await fetch(
-                      "http://localhost:8000/api/notifications/",
+                      `${
+                        import.meta.env.VITE_API_URL || "http://localhost:8000"
+                      }/api/notifications/`,
                       {
                         method: "POST",
                         headers: {
@@ -552,7 +587,9 @@ const AdminDashboard = () => {
                   const formData = new FormData(e.target);
                   try {
                     const res = await fetch(
-                      "http://localhost:8000/api/staff/",
+                      `${
+                        import.meta.env.VITE_API_URL || "http://localhost:8000"
+                      }/api/staff/`,
                       {
                         method: "POST",
                         headers: {

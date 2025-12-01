@@ -11,7 +11,11 @@ const Examination = () => {
   useEffect(() => {
     const fetchExams = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/examinations/");
+        const response = await fetch(
+          `${
+            import.meta.env.VITE_API_URL || "http://localhost:8000"
+          }/api/examinations/`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -139,9 +143,7 @@ const Examination = () => {
         {loading && (
           <p className="text-center text-gray-600">Loading examinations...</p>
         )}
-        {error && (
-          <p className="text-center text-red-500">Error: {error}</p>
-        )}
+        {error && <p className="text-center text-red-500">Error: {error}</p>}
 
         {/* Intermediate */}
         {activeTab === "inter" && (

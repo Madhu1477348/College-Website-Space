@@ -9,7 +9,11 @@ const Home = () => {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/notifications/");
+        const res = await fetch(
+          `${
+            import.meta.env.VITE_API_URL || "http://localhost:8000"
+          }/api/notifications/`
+        );
         const data = await res.json();
         setNotifications(data);
       } catch (err) {
