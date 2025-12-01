@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-j&9427=906pf^$!0ukmm96bu^6j1%-u2o)!8g&(hq&ikpp2=u!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'college-website-space.onrender.com').split(',')
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
+    "https://college-website-space.onrender.com", 
 ]
 
 import os
