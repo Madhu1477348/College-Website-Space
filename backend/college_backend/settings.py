@@ -17,20 +17,11 @@ SECRET_KEY = os.getenv(
     "django-insecure-j&9427=906pf^$!0ukmm96bu^6j1%-u2o)!8g&(hq&ikpp2=u!"
 )
 
-# Debug mode (Render automatically sets DEBUG=False)
+# Debug mode – Render sets DEBUG=False automatically
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# ALLOWED_HOSTS (Important for Render)
-ALLOWED_HOSTS = [
-    "college-website-space.onrender.com",
-    os.environ.get("RENDER_EXTERNAL_HOSTNAME"),
-    "localhost",
-    "127.0.0.1",
-]
-
-# Render host fix
-if os.environ.get("RENDER"):
-    ALLOWED_HOSTS.append(os.environ.get("RENDER_EXTERNAL_HOSTNAME"))
+# 🔥 FIX: Allow all hosts (no more DisallowedHost error)
+ALLOWED_HOSTS = ["*"]
 
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
