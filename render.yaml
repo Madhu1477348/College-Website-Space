@@ -5,7 +5,6 @@ services:
     env: docker
     region: oregon
     plan: free
-    dockerContext: ./backend
     dockerfilePath: ./backend/Dockerfile
     envVars:
       - key: DJANGO_SECRET_KEY
@@ -18,7 +17,6 @@ services:
         sync: false
       - key: EMAIL_HOST_PASSWORD
         sync: false
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
 
   # Frontend Service
   - type: web
@@ -26,7 +24,6 @@ services:
     env: docker
     region: oregon
     plan: free
-    dockerContext: ./frontend
     dockerfilePath: ./frontend/Dockerfile
     envVars:
       - key: VITE_API_URL
