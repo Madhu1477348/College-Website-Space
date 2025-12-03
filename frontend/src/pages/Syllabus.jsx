@@ -17,8 +17,8 @@ const Syllabus = () => {
       const response = await fetch(
         `${
           import.meta.env.VITE_API_URL ||
-          "https://college-website-space-1.onrender.com"
-        }/api/branches/`
+          "https://college-website-space-1.onrender.com/api"
+        }/branches/`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch branches");
