@@ -26,7 +26,7 @@ const StaffList = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/api/staff/`
+        `${import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"}/api/staff/`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch staff data");

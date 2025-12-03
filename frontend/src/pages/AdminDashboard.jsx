@@ -39,7 +39,7 @@ const AdminDashboard = () => {
     try {
       const res = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:8000"
+          import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
         }/api/notifications/`
       );
       const data = await res.json();
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   const fetchStaff = async () => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/staff/`
+        `${import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"}/api/staff/`
       );
       const data = await res.json();
       setStaff(data);
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
     try {
       const res = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:8000"
+          import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
         }/api/materials/`
       );
       const data = await res.json();
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
     try {
       const res = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:8000"
+          import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
         }/api/examinations/`
       );
       const data = await res.json();
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
       try {
         const res = await fetch(
           `${
-            import.meta.env.VITE_API_URL || "http://localhost:8000"
+            import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
           }/api/notifications/${id}/`,
           {
             method: "DELETE",
@@ -129,7 +129,7 @@ const AdminDashboard = () => {
       try {
         const res = await fetch(
           `${
-            import.meta.env.VITE_API_URL || "http://localhost:8000"
+            import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
           }/api/staff/${id}/`,
           {
             method: "DELETE",
@@ -158,7 +158,7 @@ const AdminDashboard = () => {
       try {
         const res = await fetch(
           `${
-            import.meta.env.VITE_API_URL || "http://localhost:8000"
+            import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
           }/api/materials/${id}/`,
           {
             method: "DELETE",
@@ -194,7 +194,7 @@ const AdminDashboard = () => {
     try {
       const res = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:8000"
+          import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
         }/api/notifications/${id}/`,
         {
           method: "PUT",
@@ -238,7 +238,7 @@ const AdminDashboard = () => {
     try {
       const res = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:8000"
+          import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
         }/api/staff/${id}/`,
         {
           method: "PUT",
@@ -340,7 +340,7 @@ const AdminDashboard = () => {
                   try {
                     const res = await fetch(
                       `${
-                        import.meta.env.VITE_API_URL || "http://localhost:8000"
+                        import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
                       }/api/notifications/`,
                       {
                         method: "POST",
@@ -588,7 +588,7 @@ const AdminDashboard = () => {
                   try {
                     const res = await fetch(
                       `${
-                        import.meta.env.VITE_API_URL || "http://localhost:8000"
+                        import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
                       }/api/staff/`,
                       {
                         method: "POST",
@@ -891,7 +891,7 @@ const AdminDashboard = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
                   const formData = new FormData(e.target);
-                  fetch("http://localhost:8000/api/materials/", {
+                  fetch("https://college-website-space-1.onrender.com/api/materials/", {
                     method: "POST",
                     headers: {
                       Authorization: `Bearer ${localStorage.getItem(
@@ -997,7 +997,7 @@ const AdminDashboard = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
                   const formData = new FormData(e.target);
-                  fetch("http://localhost:8000/api/examinations/", {
+                  fetch("https://college-website-space-1.onrender.com/api/examinations/", {
                     method: "POST",
                     headers: {
                       Authorization: `Bearer ${localStorage.getItem(

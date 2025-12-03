@@ -16,7 +16,8 @@ const Syllabus = () => {
       setLoading(true);
       const response = await fetch(
         `${
-          import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+          import.meta.env.VITE_API_URL ||
+          "https://college-website-space-1.onrender.com"
         }/api/branches/`
       );
       if (!response.ok) {

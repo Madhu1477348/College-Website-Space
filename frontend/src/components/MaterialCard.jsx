@@ -48,7 +48,7 @@ const MaterialCard = ({ branch }) => {
                         </span>
                         {syllabus.file && (
                           <a
-                            href={`http://127.0.0.1:8000${syllabus.file}`}
+                            href={`https://college-website-space-1.onrender.com${syllabus.file}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-purple-600 hover:text-purple-800"

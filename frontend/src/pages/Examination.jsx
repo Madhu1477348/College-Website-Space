@@ -13,7 +13,7 @@ const Examination = () => {
       try {
         const response = await fetch(
           `${
-            import.meta.env.VITE_API_URL || "http://localhost:8000"
+            import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
           }/api/examinations/`
         );
         if (!response.ok) {

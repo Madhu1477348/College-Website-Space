@@ -25,7 +25,9 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+      const apiUrl =
+        import.meta.env.VITE_API_URL ||
+        "https://college-website-space-1.onrender.com";
       const response = await fetch(`${apiUrl}/api/contact/`, {
         method: "POST",
         headers: {

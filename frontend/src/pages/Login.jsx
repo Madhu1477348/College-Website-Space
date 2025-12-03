@@ -13,7 +13,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/token/`,
+        `${import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"}/api/token/`,
         {
           method: "POST",
           headers: {

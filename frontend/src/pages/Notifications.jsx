@@ -11,7 +11,7 @@ const Notifications = () => {
       try {
         const res = await fetch(
           `${
-            import.meta.env.VITE_API_URL || "http://localhost:8000"
+            import.meta.env.VITE_API_URL || "https://college-website-space-1.onrender.com"
           }/api/notifications/`
         );
         const data = await res.json();
