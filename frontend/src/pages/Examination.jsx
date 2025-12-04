@@ -14,7 +14,7 @@ const Examination = () => {
         const response = await fetch(
           `${
             import.meta.env.VITE_API_URL ||
-            "https://college-website-space-1.onrender.com/api"
+            "https://college-website-backend-3ct5.onrender.com/api"
           }/examinations/`
         );
         if (!response.ok) {

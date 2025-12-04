@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const API =
   import.meta.env.VITE_API_URL ||
-  "https://college-website-space-1.onrender.com/api";
+  "https://college-website-backend-3ct5.onrender.com/api";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("notifications");
@@ -198,7 +198,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
         <button
@@ -210,29 +209,29 @@ const AdminDashboard = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
-
         {/* SIDE NAV */}
         <div className="w-full md:w-64 bg-white shadow-md rounded-lg h-fit">
           <nav className="flex flex-col p-4 space-y-2">
-            {["notifications", "staff", "materials", "examinations"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`text-left px-4 py-2 rounded ${
-                  activeTab === tab
-                    ? "bg-blue-600 text-white"
-                    : "hover:bg-gray-100 text-gray-700"
-                }`}
-              >
-                Manage {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
+            {["notifications", "staff", "materials", "examinations"].map(
+              (tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`text-left px-4 py-2 rounded ${
+                    activeTab === tab
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-gray-100 text-gray-700"
+                  }`}
+                >
+                  Manage {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              )
+            )}
           </nav>
         </div>
 
         {/* MAIN PANEL */}
         <div className="flex-1 bg-white shadow-md rounded-lg p-6">
-
           {/* =======================
               TAB: NOTIFICATIONS
           ======================= */}
@@ -408,8 +407,16 @@ const AdminDashboard = () => {
                   <option value="Principal">Principal</option>
                 </select>
 
-                <input name="email" placeholder="Email" className="block w-full border p-2" />
-                <input name="phone" placeholder="Phone" className="block w-full border p-2" />
+                <input
+                  name="email"
+                  placeholder="Email"
+                  className="block w-full border p-2"
+                />
+                <input
+                  name="phone"
+                  placeholder="Phone"
+                  className="block w-full border p-2"
+                />
 
                 <button className="bg-blue-600 text-white px-4 py-2 rounded">
                   Add Staff
@@ -556,9 +563,18 @@ const AdminDashboard = () => {
                   <option value="degree">Degree</option>
                 </select>
 
-                <input name="date" type="date" className="block w-full border p-2" />
+                <input
+                  name="date"
+                  type="date"
+                  className="block w-full border p-2"
+                />
 
-                <input name="file" type="file" className="block w-full" required />
+                <input
+                  name="file"
+                  type="file"
+                  className="block w-full"
+                  required
+                />
 
                 <textarea
                   name="description"
@@ -598,7 +614,6 @@ const AdminDashboard = () => {
               ))}
             </div>
           )}
-
         </div>
       </div>
     </div>

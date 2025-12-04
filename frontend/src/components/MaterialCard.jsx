@@ -3,7 +3,7 @@ import { IoDocumentText, IoDownload, IoLink } from "react-icons/io5";
 
 const API =
   import.meta.env.VITE_API_URL ||
-  "https://college-website-space-1.onrender.com/api";
+  "https://college-website-backend-3ct5.onrender.com/api";
 
 const ROOT = API.replace("/api", "");
 
