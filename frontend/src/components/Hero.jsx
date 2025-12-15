@@ -71,7 +71,7 @@ const Hero = () => {
       {/* Centered Content */}
       <div className="relative z-10 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-4
-                       bg-linear-to-r from-[#FD6D91] to-[#C2C04F]
+                       bg-linear-to-r from-white via-yellow-200 to-orange-400
                        bg-clip-text text-transparent">
           Welcome to Space Junior & Degree College
         </h1>
